@@ -9,9 +9,13 @@ Two separate functions have been hosted so far,
 
 ## Swagger Documentation
 
-Swagger is not hosted yet, but to view, please copy the content of ['swagger.yml'](https://raw.githubusercontent.com/neeldebnath/serverless-lambda-bakend/test-3/swagger.yml) and paste it to [Swagger Editor](https://editor.swagger.io/).
+Swagger is not hosted yet, but to view, please copy the content of [swagger.yml](https://raw.githubusercontent.com/neeldebnath/serverless-lambda-bakend/test-3/swagger.yml) and paste it to [Swagger Editor](https://editor.swagger.io/).
 
 ## Deployment
 
 Serverless has been set up to this project and to deploy the changes to lambda function, please run the below script into bash
 `npm run deploy`
+
+## Frontend
+
+Please click [here](https://d358vode3tvj0q.cloudfront.net/) to go to the frontend hosted in AWS.
