@@ -4,11 +4,11 @@ import { getProductsList } from "./handler";
 
 const context = createMockContext();
 const event = createMockAPIGatewayEvent({
-  path: "/path",
+  path: "/products",
   httpMethod: "get",
 });
 
-jest.mock("../../services", () => ({
+jest.mock("../../services/products", () => ({
   productService: {
     getProducts: () => {
       return products;

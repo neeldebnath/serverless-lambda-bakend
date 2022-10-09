@@ -22,18 +22,18 @@ const product = {
 };
 
 const event = createMockAPIGatewayEvent({
-  path: "/path",
-  httpMethod: "post",
+  path: "/products",
+  httpMethod: "get",
   pathParameters: { id: `${product.id}` },
 });
 
-jest.mock("../../services", () => ({
+jest.mock("../../services/products", () => ({
   productService: {
-    getProduct: (id: string | number) => {
+    getProductById: (id: string | number) => {
       if (id === product.id) {
         return product;
       }
-      return null;
+      return undefined;
     },
   },
 }));
