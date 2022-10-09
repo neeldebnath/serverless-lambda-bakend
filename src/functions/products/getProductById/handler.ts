@@ -4,7 +4,7 @@ import { Product } from "../../../types";
 
 // import schema from "./schema";
 
-const getProductById = async (event) => {
+export const getProductById = async (event) => {
   const id = event.pathParameters.id;
   const productsService = new ProductService();
   const product: Product | undefined = productsService.getProductById(+id);

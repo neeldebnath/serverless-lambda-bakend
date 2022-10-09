@@ -4,7 +4,7 @@ import { Product } from "../../../types";
 
 // import schema from "./schema";
 
-const getProductsList = async () => {
+export const getProductsList = async () => {
   const productsService = new ProductService();
   const products: Product[] = productsService.getProducts();
 
