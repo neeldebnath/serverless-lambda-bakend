@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: Serverless Lambda Functions
+  description: |-
+    This is Swagger documentation for the serverless lambda functions done to complete the task in **CloudX: AWS Practitioner for JS #3**
+  contact:
+    email: suman_debnath@epam.com
+  version: 1.0.0
+servers:
+  - url: https://ckdptybeq7.execute-api.ap-south-1.amazonaws.com/dev
+paths:
+  /products:
+    get:
+      tags:
+        - products
+      description: Get the list of all products
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  body:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Product"
+
+  /products/{productId}:
+    get:
+      tags:
+        - products
+      description: Get a single product with product id
+      parameters:
+        - name: productId
+          in: path
+          description: ID of a single product
+          required: true
+          schema:
+            type: integer
+            format: int
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    example: 200
+                  body:
+                    type: object
+                    $ref: "#/components/schemas/Product"
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 10
+        title:
+          type: string
+          example: iPhone 9
+        description:
+          type: string
+          example: An apple mobile which is nothing like apple
+        price:
+          type: integer
+          example: 549
+        discountPercentage:
+          type: integer
+          example: 12.96
+        rating:
+          type: integer
+          example: 4.69
+        stock:
+          type: number
+          example: 96
+        brand:
+          type: string
+          example: Apple
+        category:
+          type: string
+          example: smartphones
+        thumbnail:
+          type: string
+          example: https://dummyjson.com/image/i/products/1/thumbnail.jpg
+        images:
+          type: array
+          items:
+            type: string
+            example: https://dummyjson.com/image/i/products/1/1.jpg
