@@ -22,7 +22,9 @@ export const getProductById = async (event) => {
   } else {
     return {
       statusCode: 404,
-      message: "The product is not found",
+      body: JSON.stringify({
+        message: "The product is not found",
+      }),
     };
   }
 };
